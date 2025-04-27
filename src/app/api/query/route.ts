@@ -49,10 +49,6 @@ Context:
 Question: {question}
 Answer:`);
 
-    const InputStateAnnotation = Annotation.Root({
-      question: Annotation<string>,
-    });
-
     const StateAnnotation = Annotation.Root({
       question: Annotation<string>,
       context: Annotation<Document[]>,
@@ -64,7 +60,7 @@ Answer:`);
       temperature: 0,
     });
 
-    const retrieve = async (state: typeof InputStateAnnotation.State) => {
+    const retrieve = async (state: typeof StateAnnotation.State) => {
       const retrievedDocsWithScores =
         await vectorStore.similaritySearchWithScore(state.question, 4);
       const retrievedDocs = retrievedDocsWithScores.map(([doc]) => doc);

@@ -26,6 +26,7 @@ export default function RAGChat() {
     } catch (error) {
       setAnswer("Error retrieving answer. Please try again.");
       setSources([]);
+      console.error(error);
     } finally {
       setLoading(false);
     }
