@@ -81,6 +81,19 @@ export default function RAGChat() {
           )}
         </div>
       )}
+
+      <p className="mt-8 text-sm text-gray-500 text-center">
+        Data sourced from&nbsp;
+        <a
+          href="https://rmdservice.com/market-design/market-messages"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:underline"
+        >
+          RMDS Market Messages
+        </a>
+        .
+      </p>
     </div>
   );
 }
